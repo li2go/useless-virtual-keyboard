@@ -1,0 +1,77 @@
+export const keyboardLayouts = {
+    default: [[{code: 'Escape', display: 'Esc'}, {code: 'F1', display: 'F1'}, {code: 'F2', display: 'F2'}, {
+        code: 'F3',
+        display: 'F3'
+    }, {
+        code: 'F4', display: 'F4'
+    }, {code: 'F5', display: 'F5'}, {code: 'F6', display: 'F6'}, {code: 'F7', display: 'F7'}, {
+        code: 'F8',
+        display: 'F8'
+    }, {
+        code: 'F9', display: 'F9'
+    }, {code: 'F10', display: 'F10'}, {code: 'F11', display: 'F11'}, {code: 'F12', display: 'F12'}
+
+    ], [{code: '`', display: '`~'}, {code: '1', display: '1!'}, {code: '2', display: '2@'}, {
+        code: '3', display: '3#'
+    }, {code: '4', display: '4$'}, {code: '5', display: '5%'}, {code: '6', display: '6^'}, {
+        code: '7', display: '7&'
+    }, {code: '8', display: '8*'}, {code: '9', display: '9('}, {code: '0', display: '0)'}, {
+        code: '-', display: '-_'
+    }, {code: '=', display: '=+'}, {code: 'Backspace', display: '←'}], [{code: 'Tab', display: 'Tab'}, {
+        code: 'q',
+        display: 'Q'
+    }, {code: 'w', display: 'W'}, {
+        code: 'e', display: 'E'
+    }, {code: 'r', display: 'R'}, {code: 't', display: 'T'}, {code: 'y', display: 'Y'}, {
+        code: 'u', display: 'U'
+    }, {code: 'i', display: 'I'}, {code: 'o', display: 'O'}, {code: 'p', display: 'P'}, {
+        code: '[', display: '[{'
+    }, {code: ']', display: ']}'}, {code: '\\', display: '\\|'}], [{code: 'CapsLock', display: 'CapsLock'}, {
+        code: 'a',
+        display: 'A'
+    }, {code: 's', display: 'S'}, {
+        code: 'd', display: 'D'
+    }, {code: 'f', display: 'F'}, {code: 'g', display: 'G'}, {code: 'h', display: 'H'}, {
+        code: 'j', display: 'J'
+    }, {code: 'k', display: 'K'}, {code: 'l', display: 'L'}, {code: ';', display: ';:'}, {
+        code: "'", display: "'\""
+    }, {code: 'Enter', display: 'Enter'}], [{code: 'Shift', display: 'Shift'}, {code: 'z', display: 'Z'}, {
+        code: 'x',
+        display: 'X'
+    }, {
+        code: 'c', display: 'C'
+    }, {code: 'v', display: 'V'}, {code: 'b', display: 'B'}, {code: 'n', display: 'N'}, {
+        code: 'm', display: 'M'
+    }, {code: ',', display: ',<'}, {code: '.', display: '.>'}, {code: '/', display: '/?'}, {
+        code: 'Shift', display: 'Shift'
+    }], [{code: 'Control', display: 'Ctrl'}, {code: 'cmd', display: 'Cmd'}, {
+        code: 'Alt', display: 'Alt'
+    }, {code: 'Space', display: 'Space'}, {code: 'Alt', display: 'Alt'}, {
+        code: 'cmd', display: 'Cmd'
+    }, {code: 'Control', display: 'Ctrl'}]],
+
+    right: [
+        [
+            {code: 'PrintScreen', display: 'PrtSc'},
+            {code: 'ScrollLock', display: 'ScrLk'},
+            {code: 'Pause', display: 'Pause'}
+        ],
+        [
+            {code: 'Insert', display: 'Ins'}, {code: 'Home', display: 'Home'}, {code: 'PageUp', display: 'PgUp'
+        },
+        ]
+        ,
+        [
+            {code: 'Delete', display: 'Del'}, {code: 'End', display: 'End'}, {code: 'PageDown', display: 'PgDn'}
+        ],
+        [],
+        [
+            {code: 'ArrowUp', display: '↑'}
+        ],
+        [
+            {code: 'ArrowLeft', display: '←'}, {code: 'ArrowDown', display: '↓'}, {
+            code: 'ArrowRight', display: '→'
+        }
+        ]
+    ]
+}

@@ -1,0 +1,525 @@
+
+.keyboard-body {
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 20px;
+  //border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  width: fit-content;
+}
+
+.keyboard-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+  max-width: 1024px;
+
+  .keyboard-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    min-height: 60px;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.default {
+    .keyboard-row:first-child .keyboard-key:first-child,
+    .keyboard-row:first-child .keyboard-key:nth-child(5),
+    .keyboard-row:first-child .keyboard-key:nth-child(9) {
+      margin-right: 60px;
+    }
+  }
+
+  &.right {
+    margin-left: 20px;
+
+    .keyboard-row {
+      justify-content: center;
+    }
+  }
+}
+
+
+.keyboard-key {
+  color: #333;
+  border: 8px #eee outset;
+  border-top-width: 4px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  position: relative;
+
+  &.active,
+  &:hover {
+    transform: translate3d(0px, 1px, 10px);
+  }
+
+}
+
+.keyboard-key-tip {
+  font-size: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.keyboard-body {
+  &.dark {
+    background: #333;
+
+    .keyboard-key {
+      border-color: #333;
+      background-color: #333;
+      color: #eee;
+      box-shadow: #000000 0px 0px 10px;
+      transition: all 0.3s;
+
+      &.active {
+        background-color: #222;
+      }
+    }
+  }
+
+
+  &.classic {
+    background: #000;
+    border: 1px solid #aaa;
+    padding: 20px;
+    //border-radius: 10px;
+    font-family: fantasy;
+
+    .keyboard-key {
+      border-width: 6px;
+      border-top-width: 4px;
+      border-color: #eee;
+      background-color: #000;
+      color: #eee;
+      box-shadow: #000000 0px 0px 10px;
+      margin-bottom: 2px;
+
+      &:hover,
+      &.active {
+        transition: all 0.3s;
+        box-shadow: #000000 0px 0px 0px;
+      }
+    }
+  }
+
+  &.led {
+    background: #000;
+
+    .keyboard-row:has(.keyboard-key.active) .keyboard-key {
+      animation: led-active-animation 2s infinite;
+    }
+
+    .keyboard-key {
+      color: #61dafb;
+      background: #222222;
+      border-color: #333333;
+      text-shadow: #61dafb 0px 0px 10px;
+      animation: led-default-animation 10s infinite;
+
+      &.active {
+        background-color: #222;
+        color: #3dfd00;
+        animation: led-active-animation 1s infinite;
+        /**
+          brother element selector
+         */
+        & + .keyboard-key {
+          animation: led-active-animation 1s infinite 0.1s;
+        }
+
+        /**
+        brother element selector next next
+        */
+
+        & + .keyboard-key + .keyboard-key {
+          animation: led-active-animation 1s infinite 0.2s;
+        }
+
+      }
+    }
+  }
+
+  &.terminal {
+    .keyboard-key {
+      font-family: Monaco;
+      border: none;
+      box-shadow: #333 2px 2px 0;
+
+      &:hover,
+      &.active {
+        box-shadow: #333 1px 1px 0;
+      }
+    }
+  }
+
+  &.old-school {
+    background-image: radial-gradient(circle at center, #ead9d9, #8c8c8c, #9a9a9a);
+
+    .keyboard-key {
+      border: none;
+      box-shadow: #4e5050 2px 2px 0, #acd2d2 2px 2px 0;
+      color: #eee;
+      border-radius: 60px;
+      margin-bottom: 4px;
+      margin-right: 2px;
+      min-width: 60px;
+      background-image: radial-gradient(circle at center, #1f1717, #373130, #1b1919);
+
+      &.active,
+      &:hover {
+        background-image: radial-gradient(circle at center, #1f1717, #020202, #1b1919);
+      }
+    }
+  }
+
+  &.colorful {
+    background: #87f1ff;
+
+    .keyboard-key {
+      color: #fff;
+      background: #e9ca6a;
+      margin: 4px;
+      box-shadow: #428090 0px 0px 3px 3px;
+      border: 4px outset #e5e5e5;
+      text-shadow: #11161673 1px 1px 0px;
+
+      &.active {
+        opacity: 0.9;
+      }
+    }
+  }
+
+
+  &.young {
+    background: #ff9800;
+
+
+    .keyboard-key {
+      color: #fff;
+      background: #4caf50;
+      margin: 4px;
+      box-shadow: #2c673b 0px 0px 5px 3px;
+      border-color: #67d660;
+      border-width: 3px 6px 6px 6px;
+      cursor: pointer;
+      user-select: none;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: capitalize;
+      position: relative;
+
+      &:hover,
+      &.active {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.keyboard-body.metallic {
+  background: #333;
+
+  .keyboard-key {
+    color: #eee;
+    border-color: #ccc;
+    border-top-width: 2px;
+    margin-top: 2px;
+    background-color: #666;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    position: relative;
+
+    &:hover,
+    &.active {
+      transform: translate3d(0px, 1px, 10px);
+      box-shadow: #444 0px 0px 10px;
+    }
+  }
+}
+
+.keyboard-body.golden {
+  background: radial-gradient(circle at center, #ffd700, #b8860b);
+  border: 1px solid #ffd700;
+  padding: 20px;
+  border-radius: 10px;
+
+  &:after {
+    content: 'Au 99999';
+    position: absolute;
+    color: #918282;
+    top: 10px;
+    left: 20px;
+  }
+
+  .keyboard-key {
+    color: #918282;
+    border: 8px #ffd700 outset;
+    background: radial-gradient(circle at center, #ffd700, #b8860b);
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    position: relative;
+    font-size: 16px;
+
+    &:hover,
+    &.active {
+      transform: translate3d(0px, 1px, 10px);
+      box-shadow: #ffd700 0px 0px 10px;
+    }
+  }
+}
+
+.keyboard-body.piano {
+  background: #0e0e0e; /* Light grey background */
+  border: 1px solid #999; /* Grey border */
+  padding: 20px;
+  //border-radius: 10px;
+
+  .keyboard-key {
+    color: #fff; /* Black key text color */
+    border: 8px #e0e0e0 outset;
+    background: #ffffff; /* Light grey key background */
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    position: relative;
+
+    &.key_cmd,
+    &.key_alt,
+    &.key_q,
+    &.key_w,
+    &.key_e,
+    &.key_r,
+    &.key_t,
+    &.key_y,
+    &.key_u,
+    &.key_i,
+    &.key_o,
+    &.key_p,
+    {
+      background: #000000;
+      border: 8px #000000 outset;
+      color: #000;
+    }
+
+    &:hover,
+    &.active {
+      transform: translate3d(0px, 1px, 10px);
+      box-shadow: #999 0px 0px 10px;
+    }
+  }
+}
+
+.keyboard-body.strawberry {
+  background: #ea5712; /* Light grey background */
+  border: 1px solid #999; /* Grey border */
+  padding: 20px;
+  //border-radius: 10px;
+
+  .keyboard-key {
+    color: #fff; /* Black key text color */
+    border-color: #ff4a29;
+    background: #ff4a29; /* Light grey key background */
+    height: 60px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    position: relative;
+    font-family: cursive;
+
+    &.key_cmd,
+    &.key_alt,
+    &.key_q,
+    &.key_w,
+    &.key_e,
+    &.key_r,
+    &.key_t,
+    &.key_y,
+    &.key_u,
+    &.key_i,
+    &.key_o,
+    &.key_p,
+    {
+      //background: #000000;
+      //border: 8px #000000 outset;
+      color: #000;
+    }
+
+    &:hover,
+    &.active {
+      transform: translate3d(0px, 1px, 10px);
+      //box-shadow: #999 0px 0px 10px;
+    }
+  }
+}
+
+@keyframes led-active-animation {
+  0% {
+    color: #ff5733;
+    text-shadow: #ff5733 0px 0px 10px;
+  }
+  15% {
+    color: #33ff57;
+    text-shadow: #33ff57 0px 0px 10px;
+  }
+  30% {
+    color: #5733ff;
+    text-shadow: #5733ff 0px 0px 10px;
+  }
+  45% {
+    color: #ffcc33;
+    text-shadow: #ffcc33 0px 0px 10px;
+  }
+  60% {
+    color: #33aaff;
+    text-shadow: #33aaff 0px 0px 10px;
+  }
+  75% {
+    color: #ff33cc;
+    text-shadow: #ff33cc 0px 0px 10px;
+  }
+  90% {
+    color: #aaff33;
+    text-shadow: #aaff33 0px 0px 10px;
+  }
+  100% {
+    color: #ff5733;
+    text-shadow: #ff5733 0px 0px 10px;
+  }
+}
+
+@keyframes led-default-animation {
+  0% {
+    color: #39f;
+    text-shadow: #39f 0px 0px 10px;
+  }
+  15% {
+    color: #8bc5d1;
+    text-shadow: #8bc5d1 0px 0px 10px;
+  }
+  30% {
+    color: #f8cb4a;
+    text-shadow: #f8cb4a 0px 0px 10px;
+  }
+  45% {
+    color: #95b850;
+    text-shadow: #95b850 0px 0px 10px;
+  }
+  60% {
+    color: #944893;
+    text-shadow: #944893 0px 0px 10px;
+  }
+  75% {
+    color: #c71f00;
+    text-shadow: #c71f00 0px 0px 10px;
+  }
+  90% {
+    color: #bdb280;
+    text-shadow: #bdb280 0px 0px 10px;
+  }
+  100% {
+    color: #39f;
+    text-shadow: #39f 0px 0px 10px;
+  }
+}
+
+.keyboard-settings {
+
+  background: #fff;
+  padding: 10px 50px;
+  left: 30px;
+  user-select: none;
+}
+
+.keyboard-setting {
+
+}
+
+
+.bar-btn{
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    transition: all .5s;
+    transform: rotate(0deg);
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
+.btn-pin{
+  position: absolute;
+  top: 0;
+  right: 60px;
+  margin: 10px;
+  color: #fff;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.keyboard-setting-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  margin: 10px;
+  color: #fff;
+  font-size: 20px;
+  z-index: 2;
+}
+
+
+
+
+.keyboard-container {
+  width: fit-content;
+}
+
+
+
+

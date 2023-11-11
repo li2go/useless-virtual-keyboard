@@ -1,0 +1,51 @@
+[
+  {
+    "name": "default"
+  },
+  {
+    "name": "dark"
+
+  },
+  {
+    "name": "light"
+  },
+  {
+    "name": "strawberry"
+  },
+  {
+    "name": "classic"
+  },
+  {
+    "name": "terminal"
+  },
+  {
+    "name": "old-school"
+  },
+  {
+    "name": "colorful"
+  },
+  {
+    "name": "young"
+  },
+  {
+    "name": "metallic"
+  },
+  {
+    "name": "golden"
+  },
+  {
+    "name": "piano"
+  },
+  {
+    "name": "led"
+  },
+  {
+    "name": "cyberpunk"
+  },
+  {
+    "name": "flat",
+    "files": [
+      "./config/themes/flat.css"
+    ]
+  }
+]
